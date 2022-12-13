@@ -2,13 +2,14 @@ import { Schema, model } from 'mongoose'
 
 const schema = new Schema(
   {
-    fullName: String,
-    mail: String,
-    telephone: String,
-    password: String,
-    userRole: {
+    title: String,
+    isCompleted: {
+      type: Boolean,
+      default: false,
+    },
+    user: {
       type: Schema.Types.ObjectId,
-      ref: 'user-role',
+      ref: 'user',
     },
   },
   {
@@ -17,4 +18,4 @@ const schema = new Schema(
   }
 )
 
-export default model('user', schema)
+export default model('todo', schema)

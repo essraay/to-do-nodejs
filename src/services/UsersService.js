@@ -15,7 +15,7 @@ export default class UserService extends BaseService {
   }
 
   get(where = {}) {
-    return this.model.findOne(where).populate('userRole')
+    return this.model.findOne(where)
   }
 
   async refreshToken(data) {
